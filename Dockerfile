@@ -20,3 +20,5 @@ EXPOSE 80 443
 
 
 ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
+
+# A minor change
