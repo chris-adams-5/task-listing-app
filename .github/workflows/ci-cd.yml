@@ -102,6 +102,13 @@ jobs:
 
       - name: List contents in the aws directory
         run: ls -lah ./aws/
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-2
 
       - name: Copy Dockerrun.aws.json to S3
         working-directory: ./aws
