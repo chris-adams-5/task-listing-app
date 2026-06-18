@@ -80,16 +80,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: push
     env:
-      CONTAINER_REGISTRY_URL: "placeholder-registry-url"
-      CONTAINER_REPOSITORY_NAME: "placeholder-repo-name"
-      S3_DEPLOY_BUCKET: "placeholder-deploy-bucket"
-      ELASTIC_BEANSTALK_APP_NAME: "placeholder-app-name"
-      ELASTIC_BEANSTALK_ENV_NAME: "placeholder-env-name"
+      CONTAINER_REGISTRY_URL: "664047078509.dkr.ecr.eu-west-2.amazonaws.com/chris-tf-repo"
+      CONTAINER_REPOSITORY_NAME: "chris-placeholder-repo-name"
+      S3_DEPLOY_BUCKET: "chris-tf-docker-config"
+      ELASTIC_BEANSTALK_APP_NAME: "chris-task-listing-app"
+      ELASTIC_BEANSTALK_ENV_NAME: "chris-task-listing-app-environment"
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Set permissions for create_dockerrun.sh
         run: chmod +x ./aws/create_dockerrun.sh
 
