@@ -104,6 +104,7 @@ jobs:
         run: ls -lah ./aws/
 
       - name: Copy Dockerrun.aws.json to S3
+        working-directory: ./aws
         run: |
           echo "Copying Dockerrun.aws.json to S3"
           aws s3 cp Dockerrun.aws.json "s3://$S3_DEPLOY_BUCKET"
